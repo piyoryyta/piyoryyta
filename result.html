@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>脳内メーカー</title>
+    <meta charset="utf-8">
+    <link href="style.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/gh/yesiamrocks/cssanimation.io@1.0.3/cssanimation.min.css" rel="stylesheet">
+</head>
+<body>
+    <div class="copyright">Created by piyoryyta</div>
+    <div class="result">
+            <h1 class="cssanimation fadeInBottom">ぴよりーた の脳内</h1>
+            <div class=" cssanimation brain-container off">
+                <div class="cssanimation brain">
+                    <ul>
+                        <li>
+                            <a id="Bio" href="javascript:void(0);" onclick="Click(this);">bio</a>
+                        <li>
+                            <a id="SNS" href="javascript:void(0);" onclick="Click(this);">SNS</a>
+                        </li>
+                        <li>
+                            <a id="Game" href="javascript:void(0);" onclick="Click(this);">ゲーム</a>
+                        </li>
+                        <li>
+                            <a id="Illustration" href="javascript:void(0);" onclick="Click(this);">イラスト</a>
+                        </li>
+                        <li>
+                            <a id="Programming" href="javascript:void(0);" onclick="Click(this);">プログラミング</a>
+                        </li>
+                        <li>
+                            <a id="Music" href="javascript:void(0);" onclick="Click(this);">音楽</a>
+                        </li>
+                        <li>
+                            <a id="Movie" href="javascript:void(0);" onclick="Click(this);">動画</a>    
+                        </li>
+                    </ol>
+                </div>
+                <div class="cssanimation thought off">
+                    <a id="none" href="javascript:void(0);" onclick="Click(this);">閉じる</a>
+                </div>
+            </div>
+    </div>
+
+    <script type="text/javascript">
+        var showingThought = "none";
+        var json = {
+                "Bio": {
+                    "content": "スペルはpiyoryyta。<br>生息地はインターネットとVRChat。<br>PCでできること大体趣味です。",
+                    "links": []
+                },
+                "SNS": {
+                    "content": "いつも電子の海を漂っている。リンクに陽キャのSNSがないのが私を物語る。",
+                    "links":[
+                        {
+                            "name": "Twitter",
+                            "url": "https://twitter.com/piyoryyta"
+                        },
+                        {
+                            "name": "Mastodon",
+                            "url": "https://mstdn.jp/@piyoryyta"
+                        }
+                    ]
+                },
+                "Game": {
+                    "content": "PCゲーム大好きマン。<br>VRChatはいいぞ(布教)。",
+                    "links": [
+                        {
+                            "name": "Steam",
+                            "url": "https://steamcommunity.com/id/piyoryyta/"
+                        },
+                        {
+                            "name": "VRChat",
+                            "url": "https://vrchat.com/home/user/usr_958dd17e-cc60-4efe-a16a-359d22fd3939"
+                        }
+                    ]
+                },
+                "Music": {
+                    "content": "湿り気のない曲が好物。<br>最近の好きな曲は「錠剤」。チェンソーマンいいよね。<br>偶にDTMこねこねしてるけどよくわかんないです……",
+                    "links": []
+                },
+                "Programming": {
+                    "content": "主な武器はC#、UnityとPython。<br>最近Unityの拡張機能を作った。",
+                    "links": [
+                        {
+                            "name": "GitHub",
+                            "url": "https://github.com/piyoryyta"
+                        },
+                        {
+                            "name": "Booth",
+                            "url": "https://piyoryyta.booth.pm/"
+                        }
+                    ]
+                },
+                "Illustration": {
+                    "content": "お絵かき弱者。細々と何か描いてたり描かなかったり。<br>将来的にはモデリングとかもしたい。<br>留学先にタブ持ってくの忘れ、ドット絵も描き始めた。<br><img src='./pnkp.png' width='60px' height='60px'>",
+                    "links": []
+                },
+                "Movie": {
+                    "content": "Aviutl歴は割りと長けど長いだけ。<br>ちょっとしたモンなら作れるよ。",
+                    "links": []
+                }
+            }
+
+        const thoughtContainer = document.getElementsByClassName("brain-container")[0];
+        const thought = document.getElementsByClassName("thought")[0];
+
+        function Click(obj) {
+            showingThought = obj.id;
+            if(showingThought != "none"){
+                thoughtContainer.classList.replace("off", "on");
+                ChangeThought(json);
+            }else{
+                thoughtContainer.classList.replace("on", "off");
+            }
+        }
+
+        function ChangeThought(json){
+            thought.innerHTML = "";
+            var title = document.createElement("h2");
+            title.innerHTML = showingThought;
+            thought.appendChild(title);
+
+            var content = document.createElement("p");
+            content.innerHTML = json[showingThought].content;
+            thought.appendChild(content);
+
+            if(json[showingThought].links.length > 0){
+                var links = document.createElement("p");
+                links.innerHTML = "リンク";
+                thought.appendChild(links);
+                var list = document.createElement("ul");
+                thought.appendChild(list);
+                for(var i = 0; i < json[showingThought].links.length; i++){
+                    var link = document.createElement("li");
+                    var a = document.createElement("a");
+                    a.href = json[showingThought].links[i].url;
+                    a.target = "_blank";
+                    a.innerHTML = json[showingThought].links[i].name;
+                    link.appendChild(a);
+                    list.appendChild(link);
+                }
+            }
+            
+            var close = document.createElement("a");
+            close.id = "none";
+            close.href = "javascript:void(0);";
+            close.onclick = function(){Click(this);};
+            close.innerHTML = "閉じる";
+            thought.appendChild(close);
+        }
+    </script>
+
+</body>
+</html>

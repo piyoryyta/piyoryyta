@@ -1,0 +1,53 @@
+{
+    "bio": {
+        "content": "スペルはpiyoryyta。<br>生息地はインターネットとVRChat。<br>PCでできること大体趣味です。",
+        "links": []
+    },
+    "SNS": {
+        "content": "いつも電子の海を漂っている。",
+        "links":[
+            {
+                "name": "Twitter",
+                "url": "https://twitter.com/piyoryyta"
+            }
+        ]
+    },
+    "game": {
+        "content": "PCゲーム大好きマン。VRChatはいいぞ(布教)。",
+        "links": [
+            {
+                "name": "Steam",
+                "url": "https://steamcommunity.com/id/piyoryyta/"
+            },
+            {
+                "name": "VRChat",
+                "url": "https://vrchat.com/home/user/usr_958dd17e-cc60-4efe-a16a-359d22fd3939"
+            }
+        ]
+    },
+    "music": {
+        "content": "湿り気のない曲が好物。<br>最近の好きな曲は「錠剤」。チェンソーマンいいよね。<br>偶にDTMこねこねしてるけどよくわかんないです……",
+        "links": []
+    },
+    "programming": {
+        "content": "主な武器はC#、UnityとPython。<br>最近Unityの拡張機能を作った。",
+        "links": [
+            {
+                "name": "GitHub",
+                "url": "https://github.com/piyoryyta"
+            },
+            {
+                "name": "booth",
+                "url": "https://piyoryyta.booth.pm/"
+            }
+        ]
+    },
+    "illustration": {
+        "content": "お絵かき弱者。細々と何か描いてたり描かなかったり。<br>将来的にはモデリングとかもしたい。<br>留学先にタブ持ってくの忘れ、ドット絵も描き始めた。",
+        "links": []
+    },
+    "movie": {
+        "content": "Aviutl歴は割りと長けど長いだけ。<br>ちょっとしたモンなら作れるよ。",
+        "links": []
+    }
+}

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>脳内メーカー</title>
+    <meta charset="utf-8">
+    <link href="style-index.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/gh/yesiamrocks/cssanimation.io@1.0.3/cssanimation.min.css" rel="stylesheet">
+</head>
+<body>
+    <div class="background"></div>
+    <div class="hero">
+        <input type="text" class="cssanimation" readonly="readonly" value="ぴよりーた">
+        <input type="button" value="診断" onclick="Click()">
+    </div>
+    <script type="text/javascript">
+        var elem;
+        function Transition() {
+            document.getElementsByClassName("hero")[0].innerHTML = "";
+            setTimeout("location.href = 'result.html'", 1500);
+        }
+        window.addEventListener("load", (event) => {
+            document.getElementsByClassName("background")[0].style.display = "none";
+        });
+        function Click() {
+            elem = document.createElement("p");
+            elem.innerHTML = "診断中...";
+            document.getElementsByClassName("hero")[0].appendChild(elem);
+            document.getElementsByClassName("background")[0].style.display = "block";
+            document.getElementsByClassName("background")[0].style.cursor = "wait";
+            setTimeout("Transition()", 1000);
+        }
+    </script>
+</html>
