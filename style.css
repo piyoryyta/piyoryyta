@@ -23,7 +23,7 @@ h1, h2{
     }
 }
 
-@media(max-height: 512px){
+@media(max-height: 800px){
     body{
         align-items: flex-start;
         overflow: scroll;
@@ -31,7 +31,7 @@ h1, h2{
 }
 
 .copyright{
-    position: absolute;
+    position: fixed;
     bottom: 0;
     right: 0;
     margin: 10px;
@@ -141,4 +141,23 @@ a {
 @keyframes fade-out {
     from { opacity: 1; }
     to { opacity: 0; }
+}
+
+@media (orientation: portrait) {
+    body{
+        scale: 1.5;
+        overflow: scroll;
+    }
+    .brain-container.on{
+        animation: expand-vertical 1s ease-in-out 0s forwards;
+    }
+    .brain-container.off{
+        animation: fold-vertical 2s ease-out 2s forwards;
+    }
+    @keyframes expand-vertical {
+        to{ height: 800px; }
+    }
+    @keyframes fold-vertical {
+        to { height: 400px; }
+    }
 }
